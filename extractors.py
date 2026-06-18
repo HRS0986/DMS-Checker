@@ -1,3 +1,7 @@
+import os
+import easyocr
+from pypdf import PdfReader
+
 def extract_text_from_image(file_path, reader):
     """Extract text from an image file using EasyOCR."""
     print(f"   [OCR] Running EasyOCR on '{os.path.basename(file_path)}'...")

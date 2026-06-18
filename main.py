@@ -3,8 +3,6 @@ from webdav3.client import Client
 from webdav3.exceptions import WebDavException
 from dotenv import load_dotenv
 import os
-import easyocr
-from pypdf import PdfReader
 from llm import get_answer_from_llm
 from extractors import extract_text_from_image, extract_text_from_pdf, process_images_to_text
 

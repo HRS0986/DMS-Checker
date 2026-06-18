@@ -1,6 +1,10 @@
-def get_answer_from_llm():
-    from google import genai
+import os
+from google import genai
 
+LOCAL_DOWNLOAD_DIR = os.getenv('LOCAL_DOWNLOAD_DIR', 'quiz')
+SUPPORTED_IMAGE_EXTS = ['.jpg', '.jpeg', '.png', '.bmp', '.tiff', '.webp']
+
+def get_answer_from_llm():
     template_str = (
         "SYSTEM INSTRUCTION:\n"
         "You are a helpful question and answering assistant. "
