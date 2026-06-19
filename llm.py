@@ -1,5 +1,6 @@
 import os
 from google import genai
+from extractors import extract_text_from_pdf
 
 LOCAL_DOWNLOAD_DIR = os.getenv('LOCAL_DOWNLOAD_DIR', 'quiz')
 SUPPORTED_IMAGE_EXTS = ['.jpg', '.jpeg', '.png', '.bmp', '.tiff', '.webp']
@@ -73,7 +74,7 @@ def get_answer_from_llm():
         contents=f"{template_str.format(context_str=data, query_str=query)}"
     )
 
-    with open("answers.txt", "w", encoding='utf-8') as file:
+    with open("dat.txt", "w", encoding='utf-8') as file:
         file.write(response.text)
 
     print(response.text)
